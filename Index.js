@@ -14,7 +14,7 @@ fetch("https://www.swapi.tech/api/people/")
             message.textContent = "No characters found!";
             return;
         }
-
+        console.log(people);
         people.forEach(person => {
             const card = document.createElement('div');
             card.className = 'card';
@@ -22,7 +22,7 @@ fetch("https://www.swapi.tech/api/people/")
             card.innerHTML = `
                 <h2>${person.name}</h2>
                 <p>UID: ${person.uid}</p>
-                <a href="${person.url}" target="_blank">View Details</a>
+                <a href="character.html?id=${person.uid}">View Details</a>
             `;
 
             content.appendChild(card);
